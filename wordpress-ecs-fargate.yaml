@@ -488,7 +488,7 @@
     DBSubnetGroup:
       Type: AWS::RDS::DBSubnetGroup
       Properties:
-        DBSubnetGroupName: wp-db-subnet-group
+        # DBSubnetGroupName: wp-db-subnet-group
         DBSubnetGroupDescription: wp-db-subnet-group
         SubnetIds:
         - !Ref PublicSubnet0
@@ -571,7 +571,8 @@
     WordPressALB:
       Type: AWS::ElasticLoadBalancingV2::LoadBalancer
       Properties:
-        Name: wof-load-balancer
+        # Name: wof-load-balancer
+        Name: wof-load-balancerA
         SecurityGroups: 
         - !Ref ALBSecurityGroup
         Subnets:
@@ -581,7 +582,8 @@
     WordPressTargetGroup:
       Type: AWS::ElasticLoadBalancingV2::TargetGroup
       Properties:
-        Name: WordPressTargetGroup
+        # Name: WordPressTargetGroup
+        Name: WordPressTargetGroupA
         TargetType: ip
         Port: 8080
         Protocol: HTTP
